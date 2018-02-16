@@ -9,9 +9,9 @@ curr_hour=$(date +%H)
 
 
 cd HOME_DIRECTORY
-moveFilesToDailyFolder $curr_date $curr_hour
 
 moveFilesToDailyFolder $curr_date $curr_hour
+moveFilesToDailyFolder $curr_date $(curr_hour+1)
 
 function moveFilesToDailyFolder(){
 
