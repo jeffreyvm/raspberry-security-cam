@@ -8,8 +8,8 @@ function moveFiles(){
     HOUR="$2"
 
 
-    dir_name=$DATE\/$HOUR\_\0\0
-    echo start moving pictures made at $dir_name
+    dir_name=ordered/$DATE\/$HOUR\_\0\0
+    echo start moving pictures made to $dir_name
 
     # first check if the date folder exists
     if [ ! -d $dir_name ]; then
