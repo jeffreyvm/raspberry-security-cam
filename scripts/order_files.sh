@@ -12,7 +12,7 @@ function moveFiles(){
     echo start moving pictures made at $dir_name
 
     # first check if the date folder exists
-    if [ ! -d $dir_name]; then
+    if [ ! -d $dir_name ]; then
         mkdir $dir_name -p
         echo created folder $dir_name
     fi
