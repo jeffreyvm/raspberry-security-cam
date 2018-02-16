@@ -12,8 +12,8 @@ function moveFiles(){
     echo start moving pictures made at $DATE $HOUR
 
     # first check if the date folder exists
-    if ! [-d "$DATE\/$HOUR"]; then
-        dir_name=$DATE\/$HOUR\_\0\0
+    dir_name=$DATE\/$HOUR\_\0\0
+    if [[! -d $dir_name]]; then
         mkdir $dir_name -p
     fi
 
