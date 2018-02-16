@@ -17,7 +17,8 @@ function moveFiles(){
         echo created folder $dir_name
     fi
 
-    for curr_file in $(ls $DATE\_$HOUR* | sort -u);
+    #grep filters on date/time, 2nd grep filters folders (if they exist)
+    for curr_file in $(ls -p | grep $DATE\_$HOUR | grep -v / | sort -u);
     do
         echo move $curr_file to $dir_name
         mv $curr_file $dir_name
