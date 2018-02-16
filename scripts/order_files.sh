@@ -2,7 +2,7 @@
 # This script orders the motion files in an folder per hour
 # it orders all files that are captured in the current hour and the previous hour
 
-function moveFilesToDailyFolder(){
+function moveFiles(){
 
     DATE="$1"
     HOUR="$2"
@@ -26,13 +26,11 @@ function moveFilesToDailyFolder(){
     echo end of script
 }
 
-HOME_DIRECTORY=$('/media/webcam/motion')
 
 curr_date=$(date +%Y%m%d)
 curr_hour=$(date +%H)
 
+cd /media/webcam/motion
 
-cd $HOME_DIRECTORY
-
-moveFilesToDailyFolder $curr_date $curr_hour
-moveFilesToDailyFolder $curr_date $($curr_hour+1)
+moveFiles $curr_date $curr_hour
+moveFiles $curr_date $($curr_hour+1)
