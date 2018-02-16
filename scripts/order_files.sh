@@ -29,8 +29,9 @@ function moveFiles(){
 
 curr_date=$(date +%Y%m%d)
 curr_hour=$(date +%H)
+prev_hour=$(date +%H -d "1 hour ago")
 
 cd /media/webcam/motion
 
 moveFiles $curr_date $curr_hour
-moveFiles $curr_date $($curr_hour+1)
+moveFiles $curr_date $prev_hour
