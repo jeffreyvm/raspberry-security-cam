@@ -7,14 +7,14 @@ function moveFiles(){
     DATE="$1"
     HOUR="$2"
 
-    dir_name=
 
-    echo start moving pictures made at $DATE $HOUR
+    dir_name=$DATE\/$HOUR\_\0\0
+    echo start moving pictures made at $dir_name
 
     # first check if the date folder exists
-    dir_name=$DATE\/$HOUR\_\0\0
-    if [[! -d $dir_name]]; then
+    if [ ! -d $dir_name]; then
         mkdir $dir_name -p
+        echo created folder $dir_name
     fi
 
     for curr_file in $(ls $DATE\_$HOUR* | sort -u);
