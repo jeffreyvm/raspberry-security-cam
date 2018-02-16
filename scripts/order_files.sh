@@ -14,13 +14,13 @@ function moveFiles(){
     # first check if the date folder exists
     if ! [-d "$DATE\/$HOUR"]; then
         dir_name=$DATE\/$HOUR\_\0\0
-        mkdir dir_name -p
+        mkdir $dir_name -p
     fi
 
     for curr_file in $(ls $DATE\_$HOUR* | sort -u);
     do
         echo move $curr_file to $dir_name
-        mv curr_file dir_name
+        mv $curr_file $dir_name
     done;
 
     echo end of script
